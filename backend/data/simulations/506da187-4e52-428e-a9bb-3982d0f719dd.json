@@ -1,0 +1,35 @@
+{
+  "simulation_id": "506da187-4e52-428e-a9bb-3982d0f719dd",
+  "parameters": {
+    "channel_width": 0.0005,
+    "channel_height": 0.001,
+    "channel_length": 0.03,
+    "channel_count": 25,
+    "wall_thickness": 0.0002,
+    "inlet_velocity": 2.0,
+    "inlet_temperature": 298.15,
+    "outlet_pressure": 0.0,
+    "heat_flux": 10000.0,
+    "base_temperature": 323.15,
+    "fluid_type": "air",
+    "solid_material": "aluminum",
+    "mesh_resolution": 20.0,
+    "max_iterations": 1000,
+    "convergence_criteria": 1e-05,
+    "simulation_mode": "mock"
+  },
+  "status": "completed",
+  "performance_metrics": {
+    "max_temperature": 298.1858983485132,
+    "min_temperature": 298.15,
+    "pressure_drop": 63363.29142857143,
+    "heat_transfer_coefficient": 225.08272232364482,
+    "reynolds_number": 90.74074074074075,
+    "nusselt_number": 6.252297842323467,
+    "friction_factor": 0.7053061224489795,
+    "thermal_resistance": 11.8474960633908,
+    "efficiency": 1.0
+  },
+  "created_at": "2026-03-11T20:33:37.603014",
+  "updated_at": "2026-03-11T20:33:51.665996"
+}

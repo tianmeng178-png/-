@@ -1,0 +1,25 @@
+{
+  "simulation_id": "d8d7eca1-ff2e-4dde-8b82-b374297c0b98",
+  "parameters": {
+    "channel_width": 0.00015,
+    "channel_height": 0.0004,
+    "channel_length": 0.005,
+    "channel_count": 10,
+    "wall_thickness": 7.5e-05,
+    "inlet_velocity": 0.3,
+    "inlet_temperature": 293.15,
+    "outlet_pressure": 0.0,
+    "heat_flux": 30000.0,
+    "base_temperature": 353.15,
+    "fluid_type": "water",
+    "solid_material": "silicon",
+    "mesh_resolution": 2e-05,
+    "max_iterations": 1000,
+    "convergence_criteria": 1e-06,
+    "simulation_mode": "openfoam"
+  },
+  "status": "running",
+  "performance_metrics": null,
+  "created_at": "2026-03-14T11:40:15.611525",
+  "updated_at": "2026-03-14T11:40:15.611568"
+}

@@ -1,0 +1,65 @@
+[
+  {
+    "id": "default_water_copper",
+    "name": "水冷铜基板标准配置",
+    "description": "适用于大多数电子设备散热的标准配置",
+    "parameters": {
+      "channel_width": 0.0001,
+      "channel_height": 0.0005,
+      "channel_length": 0.01,
+      "channel_count": 10,
+      "wall_thickness": 5e-05,
+      "inlet_velocity": 0.2,
+      "inlet_temperature": 298.15,
+      "outlet_pressure": 0,
+      "heat_flux": 500000,
+      "base_temperature": 353.15,
+      "fluid_type": "water",
+      "solid_material": "copper"
+    },
+    "created_at": "2026-03-10T18:27:15.481543",
+    "is_default": true
+  },
+  {
+    "id": "high_power",
+    "name": "高功率散热配置",
+    "description": "适用于高功率密度电子设备",
+    "parameters": {
+      "channel_width": 0.00015,
+      "channel_height": 0.0008,
+      "channel_length": 0.02,
+      "channel_count": 20,
+      "wall_thickness": 5e-05,
+      "inlet_velocity": 0.5,
+      "inlet_temperature": 293.15,
+      "outlet_pressure": 0,
+      "heat_flux": 800000,
+      "base_temperature": 373.15,
+      "fluid_type": "water",
+      "solid_material": "copper"
+    },
+    "created_at": "2026-03-10T18:27:15.481568",
+    "is_default": false
+  },
+  {
+    "id": "air_cooling",
+    "name": "风冷配置",
+    "description": "适用于低功率或空气冷却场景",
+    "parameters": {
+      "channel_width": 0.0002,
+      "channel_height": 0.001,
+      "channel_length": 0.015,
+      "channel_count": 15,
+      "wall_thickness": 0.0001,
+      "inlet_velocity": 1.0,
+      "inlet_temperature": 300.15,
+      "outlet_pressure": 0,
+      "heat_flux": 100000,
+      "base_temperature": 343.15,
+      "fluid_type": "air",
+      "solid_material": "aluminum"
+    },
+    "created_at": "2026-03-10T18:27:15.481570",
+    "is_default": false
+  }
+]
