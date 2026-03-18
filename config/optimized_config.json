@@ -1,0 +1,84 @@
+{
+  "version": "2.0",
+  "description": "AI-Driven Heat Exchanger Design System - Optimized Configuration",
+  "config_structure": {
+    "llm": "LLM相关配置",
+    "openfoam": "OpenFOAM环境配置", 
+    "simulation": "仿真参数配置",
+    "postprocessing": "后处理配置",
+    "security": "安全配置",
+    "project": "项目信息"
+  },
+  "configs": {
+    "llm": {
+      "gateway_url": "${HEAT_EXCHANGER_LLM_GATEWAY_URL:-https://open.bigmodel.cn/api/paas/v4}",
+      "api_key": "${HEAT_EXCHANGER_LLM_API_KEY}",
+      "model": "${HEAT_EXCHANGER_LLM_MODEL:-glm-4}",
+      "timeout": "${HEAT_EXCHANGER_LLM_TIMEOUT:-120}",
+      "temperature": "${HEAT_EXCHANGER_LLM_TEMPERATURE:-0.7}",
+      "max_tokens": "${HEAT_EXCHANGER_LLM_MAX_TOKENS:-2000}"
+    },
+    "openfoam": {
+      "use_wsl": "${HEAT_EXCHANGER_OPENFOAM_USE_WSL:-true}",
+      "wsl_distro": "${HEAT_EXCHANGER_OPENFOAM_WSL_DISTRO:-Ubuntu-24.04}",
+      "openfoam_path": "${HEAT_EXCHANGER_OPENFOAM_OPENFOAM_PATH:-/opt/openfoam11}",
+      "template_case": "${HEAT_EXCHANGER_OPENFOAM_TEMPLATE_CASE:-/opt/openfoam11/tutorials/incompressibleFluid/cavity}"
+    },
+    "simulation": {
+      "template_dir": "${HEAT_EXCHANGER_SIMULATION_TEMPLATE_DIR:-cases/test_final2}",
+      "output_base_dir": "${HEAT_EXCHANGER_SIMULATION_OUTPUT_BASE_DIR:-cases/output}",
+      "solver": "${HEAT_EXCHANGER_SIMULATION_SOLVER:-foamRun -solver incompressibleFluid}",
+      "mesh_method": "${HEAT_EXCHANGER_SIMULATION_MESH_METHOD:-blockMesh}",
+      "default_parameters": {
+        "channel_width": 0.0001,
+        "channel_height": 0.0005,
+        "channel_length": 0.01,
+        "inlet_velocity": 0.1,
+        "inlet_temperature": 293.15,
+        "heat_flux": 10000
+      }
+    },
+    "postprocessing": {
+      "output_format": "${HEAT_EXCHANGER_POSTPROCESSING_OUTPUT_FORMAT:-json}",
+      "generate_plots": "${HEAT_EXCHANGER_POSTPROCESSING_GENERATE_PLOTS:-true}",
+      "generate_report": "${HEAT_EXCHANGER_POSTPROCESSING_GENERATE_REPORT:-true}",
+      "plot_types": ["temperature", "velocity", "pressure"],
+      "report_template": "templates/report_template.html"
+    },
+    "security": {
+      "encrypt_api_keys": "${HEAT_EXCHANGER_SECURITY_ENCRYPT_API_KEYS:-false}",
+      "log_sensitive_data": "${HEAT_EXCHANGER_SECURITY_LOG_SENSITIVE_DATA:-false}",
+      "allowed_origins": ["http://localhost:3000", "http://127.0.0.1:3000"]
+    },
+    "project": {
+      "name": "AI-Driven Heat Exchanger Design System",
+      "version": "V1.0",
+      "description": "AI-powered heat exchanger intelligent design system using OpenFOAM",
+      "dependencies": {
+        "foamlib": ">=1.2.0",
+        "openfoam": ">=v11"
+      },
+      "modules": {
+        "llm_gateway": "LLM parameter parsing via API gateway",
+        "foam_controller": "OpenFOAM simulation control using foamlib",
+        "result_parser": "Post-processing and visualization"
+      }
+    }
+  },
+  "validation_rules": {
+    "llm": {
+      "gateway_url": {"required": true, "type": "url"},
+      "api_key": {"required": true, "type": "string", "min_length": 10},
+      "model": {"required": true, "type": "string"},
+      "timeout": {"required": true, "type": "integer", "min": 30, "max": 300}
+    },
+    "openfoam": {
+      "use_wsl": {"required": true, "type": "boolean"},
+      "openfoam_path": {"required": true, "type": "string"}
+    },
+    "simulation": {
+      "template_dir": {"required": true, "type": "string"},
+      "solver": {"required": true, "type": "string"}
+    }
+  }
+}

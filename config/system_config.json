@@ -1,0 +1,23 @@
+{
+  "openfoam": {
+    "use_wsl": true,
+    "wsl_distro": "Ubuntu-24.04",
+    "openfoam_path": "/opt/openfoam11",
+    "template_case": "/opt/openfoam11/tutorials/incompressibleFluid/cavity",
+    "mesh_timeout_seconds": 1800,
+    "solver_timeout_seconds": 21600,
+    "keep_case_dir": true,
+    "case_storage_dir": "data/openfoam_cases"
+  },
+  "tools": {
+    "paraview_link": "C:\\Users\\16659\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Ubuntu-24.04\\ParaView (Ubuntu-24.04).lnk"
+  },
+  "paraview_web": {
+    "enabled": true,
+    "use_wsl": true,
+    "wsl_distro": "Ubuntu-24.04",
+    "host": "0.0.0.0",
+    "base_url": "http://localhost",
+    "port_range": [9000, 9100]
+  }
+}
